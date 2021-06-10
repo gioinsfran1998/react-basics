@@ -10,7 +10,7 @@ export const ContainerDashboard = styled.div`
 
 export const ContainerMain = styled.div`
 	background-color: #1e252f;
-	width: 100%;
+	width: 400px;
 	padding: 10px;
 	display: flex;
 	flex-direction: column;

@@ -8,9 +8,20 @@ import VerticalLine from '../../components/VerticalLine/VerticalLine';
 import { ContainerDashboard, ContainerMain, DashLine } from './styles';
 
 import { FiXCircle } from 'react-icons/fi';
+import { useSpring, animated, config } from 'react-spring';
+import AwesomeSliderCo from '../../components/AwesomeSliderCo/AwesomeSliderCo';
 
 const Dashboard = () => {
 	const [showLine, setShowLine] = useState(true);
+
+	const animatedIconCircle = useSpring({
+		to: { opacity: 1 },
+		from: { opacity: 0 },
+		// reset: true,
+		// reverse: flip,
+		delay: 3500,
+		config: config.molasses,
+	});
 
 	const boxes = [
 		{
@@ -23,46 +34,48 @@ const Dashboard = () => {
 		},
 	];
 
-	useEffect(() => {
-		const timer = setInterval(() => {
-			console.log('setinterval');
-			setShowLine(!showLine);
-		}, 8000);
+	// useEffect(() => {
+	// 	const timer = setInterval(() => {
+	// 		console.log('setinterval');
+	// 		setShowLine(!showLine);
+	// 	}, 8000);
 
-		return () => {
-			clearInterval(timer);
-		};
-	}, [showLine]);
+	// 	return () => {
+	// 		clearInterval(timer);
+	// 	};
+	// }, [showLine]);
 
 	return (
 		<>
 			<AppBar />
 			<ContainerDashboard>
-				<Slick />
-				<h1>Dashboard</h1>
-				<ContainerMain>
-					{boxes.map(({ name, id }) => {
-						return (
-							<>
-								<Box key={id}>
-									<h3>{name}</h3>
-								</Box>
+				<div style={{ display: 'flex' }}>
+					<ContainerMain>
+						{showLine &&
+							boxes.map(({ name, id }) => {
+								return (
+									<>
+										<Box key={id}>
+											<h3>{name}</h3>
+										</Box>
 
-								{showLine && <VerticalLine showLine />}
-							</>
-						);
-					})}
-					<FiXCircle
-						style={{
-							// display: showLine && 'none',
-							// transition: 'display 0.5s ease',
-							backgroundColor: 'white',
-							fontSize: '30px',
-							borderRadius: '50%',
-							margin: '5px',
-						}}
-					/>
-				</ContainerMain>
+										{showLine && <VerticalLine showLine />}
+									</>
+								);
+							})}
+						<animated.div style={animatedIconCircle} className='iconCircle'>
+							<FiXCircle
+								style={{
+									backgroundColor: 'white',
+									fontSize: '30px',
+									borderRadius: '50%',
+									margin: '10px',
+								}}
+							/>
+						</animated.div>
+					</ContainerMain>
+					<AwesomeSliderCo />
+				</div>
 			</ContainerDashboard>
 		</>
 	);
