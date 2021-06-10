@@ -8,15 +8,9 @@ import VerticalLine from '../../components/VerticalLine/VerticalLine';
 import { ContainerDashboard, ContainerMain, DashLine } from './styles';
 
 import { FiXCircle } from 'react-icons/fi';
-import { useSpring, animated, config } from 'react-spring';
 
 const Dashboard = () => {
 	const [showLine, setShowLine] = useState(true);
-	const [flip, set] = useState(false);
-	const animatedBox = useSpring({
-		to: { height: '110px' },
-		from: { height: '0px' },
-	});
 
 	const boxes = [
 		{
@@ -33,7 +27,7 @@ const Dashboard = () => {
 		const timer = setInterval(() => {
 			console.log('setinterval');
 			setShowLine(!showLine);
-		}, 5000);
+		}, 8000);
 
 		return () => {
 			clearInterval(timer);
@@ -54,24 +48,18 @@ const Dashboard = () => {
 									<h3>{name}</h3>
 								</Box>
 
-								{showLine && (
-									<animated.div
-										style={
-											(animatedBox,
-											{ backgroundColor: 'white', padding: '30px' })
-										}
-									>
-										<DashLine showLine />
-									</animated.div>
-								)}
+								{showLine && <VerticalLine showLine />}
 							</>
 						);
 					})}
 					<FiXCircle
 						style={{
+							// display: showLine && 'none',
+							// transition: 'display 0.5s ease',
 							backgroundColor: 'white',
 							fontSize: '30px',
 							borderRadius: '50%',
+							margin: '5px',
 						}}
 					/>
 				</ContainerMain>

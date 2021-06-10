@@ -1,0 +1,6 @@
+.verticalLine {
+	background-color: aqua;
+	border-left: 2px dashed green;
+	/* height: 100px; */
+	position: relative;
+}
