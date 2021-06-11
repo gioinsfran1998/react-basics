@@ -4,7 +4,7 @@ import { LineVertical } from '../../components/VerticalLine/styles';
 export const ContainerDashboard = styled.div`
 	background-color: #8d99ae;
 	width: 1000px;
-	min-height: 100vh;
+	/* min-height: 100vh; */
 	margin: 0 auto;
 `;
 

@@ -10,6 +10,8 @@ import { ContainerDashboard, ContainerMain, DashLine } from './styles';
 import { FiXCircle } from 'react-icons/fi';
 import { useSpring, animated, config } from 'react-spring';
 import AwesomeSliderCo from '../../components/AwesomeSliderCo/AwesomeSliderCo';
+import Footer from '../../components/Footer/Footer';
+import DivAnimated from '../../components/DivAnimated/DivAnimated';
 
 const Dashboard = () => {
 	const [showLine, setShowLine] = useState(true);
@@ -46,7 +48,7 @@ const Dashboard = () => {
 	// }, [showLine]);
 
 	return (
-		<>
+		<div>
 			<AppBar />
 			<ContainerDashboard>
 				<div style={{ display: 'flex' }}>
@@ -74,10 +76,13 @@ const Dashboard = () => {
 							/>
 						</animated.div>
 					</ContainerMain>
+
 					<AwesomeSliderCo />
 				</div>
+				<DivAnimated />
 			</ContainerDashboard>
-		</>
+			<Footer />
+		</div>
 	);
 };
 

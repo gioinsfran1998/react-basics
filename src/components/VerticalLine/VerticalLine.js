@@ -4,10 +4,13 @@ import './styles.css';
 
 const VerticalLine = (props, { children }) => {
 	const animatedBox = useSpring({
-		to: { height: '100px', opacity: 1 },
-		from: { height: '0px', opacity: 0 },
+		to: { height: '100px' },
+		from: { height: '0px' },
 		delay: 2500,
 		config: config.molasses,
+		onRest: {
+			height: () => console.log('finalizado==>'),
+		},
 	});
 	return (
 		<animated.div className='verticalLine' style={animatedBox}>

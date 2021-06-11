@@ -5,10 +5,12 @@ import './components/test';
 
 function App() {
 	return (
-		<>
+		<div
+			style={{ minHeight: '100%', display: 'flex', flexDirection: 'column' }}
+		>
 			<GlobalStyle />
 			<Dashboard />
-		</>
+		</div>
 	);
 }
 
