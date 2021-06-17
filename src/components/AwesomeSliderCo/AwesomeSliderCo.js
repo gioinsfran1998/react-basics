@@ -16,7 +16,7 @@ const AwesomeSliderCo = () => {
 			bullets={false}
 			play={true}
 			cancelOnInteraction={false}
-			interval={6000}
+			interval={10000}
 			style={{ height: '150px' }}
 		>
 			<ImgBanner2 data-src={image1} />

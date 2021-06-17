@@ -6,6 +6,7 @@ export const ContainerDashboard = styled.div`
 	width: 1000px;
 	/* min-height: 100vh; */
 	margin: 0 auto;
+	padding: 10px;
 `;
 
 export const ContainerMain = styled.div`
