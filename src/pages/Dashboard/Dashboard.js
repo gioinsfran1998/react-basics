@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import AppBar from '../../components/AppBar/AppBar';
+<<<<<<< HEAD
 import Form from '../../components/Form/Form';
 
 import { ContainerDashboard, ContainerMain, DashLine } from './styles';
@@ -24,11 +25,22 @@ const Dashboard = () => {
 		config: config.molasses,
 	});
 
+=======
+import SelectOptions from '../../components/SelectOptions/SelectOptions';
+
+import { ContainerDashboard, ContainerMain, DashLine } from './styles';
+
+const Dashboard = () => {
+>>>>>>> 78096462ae3c37f46e882d4cee56120d1f0b3db0
 	return (
 		<div>
 			<AppBar />
 			<ContainerDashboard>
+<<<<<<< HEAD
 				<Debounce />
+=======
+				<SelectOptions />
+>>>>>>> 78096462ae3c37f46e882d4cee56120d1f0b3db0
 			</ContainerDashboard>
 		</div>
 	);
